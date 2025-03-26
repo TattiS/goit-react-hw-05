@@ -1,0 +1,43 @@
+.movieLst {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.movieLstItem {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 5px #646cff, 0 0 10px rgba(100, 108, 255, 0.8);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movieLstItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 7px #535bf2, 0 0 14px rgba(83, 91, 242, 0.9);
+}
+
+.movieLstItemTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #646cff;
+  margin-bottom: 10px;
+}
+
+.movieLstItemImg {
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(100, 108, 255, 0.6);
+}
