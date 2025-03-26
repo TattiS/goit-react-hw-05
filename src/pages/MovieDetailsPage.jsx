@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, Outlet, NavLink } from "react-router";
 import { useNavigate, useLocation } from "react-router-dom";
 import { fetchMovieDetails } from "../fetchService.js";
@@ -13,7 +13,7 @@ function MoviesDetailsPage() {
 
   const location = useLocation();
   const navigate = useNavigate();
-  const backPath = useMemo(() => location.state?.from ?? "/movies", [location]);
+  const backPathRef = useRef(location.state?.from ?? "/movies");
 
   useEffect(() => {
     async function getDetails() {
@@ -32,7 +32,7 @@ function MoviesDetailsPage() {
   }, [movie_id]);
 
   const handleGoBackBtn = () => {
-    navigate(backPath);
+    navigate(backPathRef.current);
   };
 
   return (
